@@ -17,7 +17,7 @@ body {
     height: 30px;
     width: 50vw;
     background-color: transparent;
-    font-size: 16px;
+    font-size: 17px;
     color: white;
 }
 
@@ -30,7 +30,7 @@ body {
     border-radius: 5px;
     display: flex;
     align-items: center;
-    padding: 5px;
+    padding: 1px;
 }
 
 .searchbox button {
