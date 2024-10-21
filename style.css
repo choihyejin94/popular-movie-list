@@ -15,7 +15,7 @@ body {
 
 .title input {
     height: 30px;
-    width: 60vw;
+    width: 50vw;
     background-color: transparent;
     font-size: 16px;
     color: white;
@@ -26,15 +26,18 @@ body {
 }
 
 .searchbox {
-    border: 1px solid white;
+    border: 2px solid rgb(150, 150, 150);
     border-radius: 5px;
     display: flex;
 }
 
-.putbtn img {
-    width: 40px;
-    height: 30px;
+.searchbox button {
+    background-color: rgb(253, 52, 52);
+    color: white;
+    font-size: medium;
     border-radius: 5px;
+    border: 2px solid rgb(101, 101, 101);
+    cursor: pointer;
 }
 
 .moviecards {
@@ -101,12 +104,13 @@ body {
         display: block;
         padding: 10px 15px;
         margin-bottom: 5px;
-        background-color: rgb(156, 60, 60);
+        background-color: rgb(253, 52, 52);
         border: none;
         border-radius: 5px;
         color: #fff;
         cursor: pointer;
         transition: box-shadow 0.5s;
+        font-size: medium;
     }
 
     .modal-background {
