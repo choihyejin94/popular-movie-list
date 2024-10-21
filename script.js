@@ -42,10 +42,16 @@ fetch('https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1', option
         onefile.classList.add("modalcardfile");
         allfile.appendChild(onefile);
 
+        // 모달 백그라운드 생성
+        const modalBackground = document.createElement("div");
+        modalBackground.classList.add("modal-background");
+        document.body.appendChild(modalBackground);
+
         const movieCards = document.querySelectorAll(".onecard");
         movieCards.forEach((card, index) => {
             card.addEventListener("click", function () {
                 onefile.style.display = "block";
+                modalBackground.style.display = "block";
 
                 const element = rows[index];
                 const myImg = element['poster_path'];
@@ -72,6 +78,7 @@ fetch('https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1', option
                 const closeModal = document.querySelector(".close-modal");
                 closeModal.addEventListener("click", function () {
                     onefile.style.display = 'none';
+                    modalBackground.style.display = "none";
                 });
             });
         });
