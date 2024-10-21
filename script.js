@@ -11,6 +11,7 @@ const options = {
     }
 };
 
+// TMDB api 가져오기
 fetch('https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1', options)
     .then(response => response.json())
     .then(response => {
@@ -47,6 +48,7 @@ fetch('https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1', option
         modalBackground.classList.add("modal-background");
         document.body.appendChild(modalBackground);
 
+        // 모달 내용값 가져오기
         const movieCards = document.querySelectorAll(".onecard");
         movieCards.forEach((card, index) => {
             card.addEventListener("click", function () {
@@ -101,14 +103,17 @@ fetch('https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1', option
                 }
             });
         }
-
+        // 버튼 클릭해서 검색
         inputbtn.addEventListener("click", function (event) {
             event.preventDefault();
             filterMovies();
         });
+        // 엔터로 검색
         form1.addEventListener("submit", function (event) {
             event.preventDefault();
             filterMovies();
         });
+        // 실시간 검색
+        inputtext.addEventListener("input", filterMovies);
     })
     .catch(err => console.error(err));
