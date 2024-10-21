@@ -31,6 +31,12 @@ body {
     display: flex;
 }
 
+.putbtn img {
+    width: 40px;
+    height: 30px;
+    border-radius: 5px;
+}
+
 .moviecards {
     display: flex;
     flex-wrap: wrap;
