@@ -10,7 +10,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 150px;
-    margin: 10px auto 0px auto;
+    margin: 10px auto 20px auto;
 }
 
 .title input {
@@ -22,13 +22,15 @@ body {
 }
 
 .title > h1{
-    font-size: 50px;
+    font-size: 60px;
 }
 
 .searchbox {
     border: 2px solid rgb(150, 150, 150);
     border-radius: 5px;
     display: flex;
+    align-items: center;
+    padding: 5px;
 }
 
 .searchbox button {
@@ -38,6 +40,18 @@ body {
     border-radius: 5px;
     border: 2px solid rgb(101, 101, 101);
     cursor: pointer;
+    padding: 10px 15px; /* 버튼 내부 여백 조정 */
+    margin-left: 5px; /* 버튼 간격 조정 */
+    transition: background-color 0.3s, transform 0.2s; /* 부드러운 전환 효과 */
+}
+
+.searchbox button:hover {
+    background-color: rgb(200, 30, 30); /* 호버 시 색상 변경 */
+    transform: scale(1.05); /* 호버 시 크기 증가 */
+}
+
+.searchbox button:active {
+    transform: scale(0.95); /* 클릭 시 크기 감소 */
 }
 
 .moviecards {
@@ -69,6 +83,10 @@ body {
 .onecard img {
     width: 100%;
     height: 390px;
+}
+
+.onecard:hover {
+    transform: scale(1.02); /* 호버 시 크기 증가 */
 }
 
 /*모달 팝업*/
