@@ -1,19 +1,11 @@
 function MainMovies(movies) {
-    let temp_html = "";
-    movies.forEach(element => {
-        const myImg = element['poster_path'];
-        const myTitle = element['title'];
-        const myAver = element['vote_average'];
-
-        temp_html += `
-            <div class="onecard" data-title="${myTitle.toUpperCase()}">
-                <img src="https://image.tmdb.org/t/p/w500${myImg}" alt="${myTitle}이미지">
-                <h2>${myTitle}</h2>
-                <p>평점: ${myAver}</p>
-            </div>
-        `;
-    });
-    document.querySelector(".mycards").innerHTML = temp_html;
+    movies.forEach((movie) => {
+    document.querySelector(".mycards").innerHTML += `
+            <div class="onecard" data-title="${movie.title.toUpperCase()}">
+                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}이미지">
+                <h2>${movie.title}</h2>
+                <p>평점: ${movie.vote_average}</p>
+            </div>`})
 }
 
 function setupModal(movies) {
@@ -33,22 +25,16 @@ function setupModal(movies) {
             modalBackground.style.display = "block";
 
             const element = movies[index];
-            const myImg = element['poster_path'];
-            const myTitle = element['title'];
-            const myText = element['overview'];
-            const myDate = element['release_date'];
-            const myAver = element['vote_average'];
 
             onefile.innerHTML = `
                 <div class="modalcard">
                     <div class="modalBtn">
-                        <button class="close-modal">닫기</button>
-                    </div>  
-                    <img src="https://image.tmdb.org/t/p/w500${myImg}" alt="${myTitle}이미지">
-                    <h2>${myTitle}</h2>
-                    <p>${myText}</p>
-                    <p>개봉일: ${myDate}</p>
-                    <p>평점: ${myAver}</p>
+                        <button class="close-modal">닫기</button></div>  
+                    <img src="https://image.tmdb.org/t/p/w500${element.poster_path}" alt="${element.title}이미지">
+                    <h2>${element.title}</h2>
+                    <p>${element.overview}</p>
+                    <p>개봉일: ${element.release_date}</p>
+                    <p>평점: ${element.vote_average}</p>
                 </div>
             `;
 
@@ -61,33 +47,5 @@ function setupModal(movies) {
     });
 }
 
-function setupSearch() {
-    const inputbtn = document.querySelector(".putbtn");
-    const inputtext = document.querySelector("#searchmovie");
-    const form1 = document.querySelector(".searchform");
-
-    function filterMovies() {
-        const movieFilter = inputtext.value.toUpperCase();
-        const movieCards = document.querySelectorAll('.onecard');
-
-        movieCards.forEach(card => {
-            const title = card.getAttribute('data-title');
-            card.style.display = title.includes(movieFilter) ? '' : 'none';
-        });
-    }
-
-    inputbtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        filterMovies();
-    });
-
-    form1.addEventListener("submit", function (event) {
-        event.preventDefault();
-        filterMovies();
-    });
-
-    inputtext.addEventListener("input", filterMovies);
-}
-
-export { MainMovies, setupModal, setupSearch };
+export { MainMovies, setupModal };
 // 다른 모듈에서 사용할 수 있도록 내보내기

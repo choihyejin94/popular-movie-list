@@ -11,11 +11,11 @@ async function fetchMovies() {
 // fetchMovies 내보낼 수 있게 함수처리
     try {
         const response = await fetch('https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1', options);
-        if (!response.ok) throw new Error('네트워크 응답이 좋지 않습니다.');
+        if (!response.ok) throw new Error('오류다 오류!');
         const data = await response.json();
         return data.results || [];
     } catch (error) {
-        console.error('영화 데이터를 가져오는 중 오류 발생:', error);
+        console.error('오류! 오류!! :', error);
         return [];
     }
 }
