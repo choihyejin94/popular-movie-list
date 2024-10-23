@@ -1,5 +1,4 @@
-// ui.js
-function renderMovies(movies) {
+function MainMovies(movies) {
     let temp_html = "";
     movies.forEach(element => {
         const myImg = element['poster_path'];
@@ -90,4 +89,5 @@ function setupSearch() {
     inputtext.addEventListener("input", filterMovies);
 }
 
-export { renderMovies, setupModal, setupSearch };
+export { MainMovies, setupModal, setupSearch };
+// 다른 모듈에서 사용할 수 있도록 내보내기
