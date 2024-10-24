@@ -1,3 +1,4 @@
+// 모듈화 하기 전 코드들.. 그동안의 노력들때모네 삭제 못하겠음.,
 // const reloadbtn = document.querySelector(".reload");
 // reloadbtn.addEventListener("click", function () {
 //     location.reload();

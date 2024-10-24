@@ -9,15 +9,8 @@ function MainMovies(movies) {
 }
 
 function setupModal(movies) {
-    const allfile = document.querySelector(".moviecards");
-    const onefile = document.createElement("div");
-    onefile.classList.add("modalcardfile");
-    allfile.appendChild(onefile);
-
-    const modalBackground = document.createElement("div");
-    modalBackground.classList.add("modal-background");
-    document.body.appendChild(modalBackground);
-
+    const onefile = document.querySelector(".onefile");
+    const modalBackground = document.querySelector(".modalBackground")
     const movieCards = document.querySelectorAll(".onecard");
     movieCards.forEach((card, index) => {
         card.addEventListener("click", function () {
