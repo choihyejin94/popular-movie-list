@@ -1,7 +1,6 @@
 import { fetchMovies } from './api.js';
 import { MainMovies, setupModal } from './ui.js';
 import { setupSearch } from './search.js';
-// 각 모듈에서 가지고 옴
 
 const reloadbtn = document.querySelector(".reload");
 reloadbtn.addEventListener("click", function () {

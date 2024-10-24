@@ -41,4 +41,3 @@ function setupModal(movies) {
 }
 
 export { MainMovies, setupModal };
-// 다른 모듈에서 사용할 수 있도록 내보내기
