@@ -100,7 +100,7 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 400px;
+    width: 550px;
     max-height: 80vh; /* 최대 높이를 화면의 80%로 설정 */
     overflow-y: auto; /* 내용이 모달의 최대 높이 초과할 경우 세로 스크롤 추가 */
     transform: translate(-50%, -50%);
